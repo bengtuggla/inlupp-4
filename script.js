@@ -81,7 +81,12 @@ if(item != ''){
 document.querySelector('#input').value = ''
 insertNewItem(item)
 }else{
- error.textContent = 'You must enter some text'
+ error.textContent = 'You must enter some text';
+ error.classList.add('errorRed')
+ setTimeout(function(){
+   error.textContent = '';
+   error.classList.remove('errorRed')
+}, 2000);
 }
 }
 
