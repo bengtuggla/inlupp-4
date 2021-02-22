@@ -117,6 +117,7 @@ function removeItem(e){
 
   if(li.classList.contains('done')){
    myList.removeChild(li)
+   console.log(e);
    }else{
     alert('Todo have to be clicked and Done for Removing')
    }
@@ -124,3 +125,11 @@ function removeItem(e){
  }
 }
 
+// REMOVE Todo Item from Array - this one have to be invoked from removeItem as createTodo is invoked from addItem() ...BUT how reach todos/id?
+/* async function removeTodo(e){
+ fetch('https://jsonplaceholder.typicode.com/todos/1', {
+  method: 'DELETE',
+
+} */
+
+/* IF-det som man klickar på har "string" === newArray.title (måste då loopa igenom) => Då removeTodo med todos/id = newArray.id ....typ nåt sånt */
