@@ -2,7 +2,7 @@ const addForm = document.querySelector('#addForm')
 const myList = document.querySelector('.myList')
 // startPage & limit max 10 items/page
 let sP = 1;
-let lP = 10;
+let lP = 100;
 const error = document.querySelector('.error')
 const input = document.querySelector('#input')
 
