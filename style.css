@@ -11,7 +11,7 @@
  display: none;
 }
 
-.error {
+.errorRed {
  background: yellow;
  color: red;
  text-transform: uppercase;
