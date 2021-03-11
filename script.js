@@ -61,6 +61,7 @@ if(todoList[i].completed != true){
 
   <button class="btn btn-danger btn-sm float-right delete">X</button>
   </li>`
+  array2.push(todoList[i].title)
   }
   
 }
