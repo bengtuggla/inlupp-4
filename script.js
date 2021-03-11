@@ -107,6 +107,7 @@ myList.addEventListener('click', (e)=> {
   }
 });
 
+//REMOVE ITEMS FROM BOTH UL-list & ARRAY (IF item is marked completed)
 myList.addEventListener('click', removeItem)
 
 function removeItem(e){
@@ -114,14 +115,33 @@ function removeItem(e){
  if(e.target.classList.contains('delete')){
   if(confirm('Are you shure?')){
    const li = e.target.parentElement;
-
+   
   if(li.classList.contains('done')){
-
-   myList.removeChild(li)
+     let dynamicTitle = e.target.previousSibling.textContent;
     
+    //console.log(`FIRST CLICK ${dynamicTitle}`);
+    for(i=0; i<array2.length; i++){
+      //console.log(array2[i] + " " + dynamicTitle);
+      let text = array2[i].toLowerCase().trim();
+      let dynamicTitlex = dynamicTitle.toLowerCase().trim()
+      let result = text.localeCompare(dynamicTitlex)
+      //console.log(result);
+      if(result === 0){
+        array2.splice(i, 1);
+        //console.log('MATCH!');
+
+        break;
+      }
+    }
+
+     myList.removeChild(li)
+     //console.log(`ARRAY2 after splice: ${array2}`);
    }else{
     alert('Todo have to be clicked and Done for Removing')
    }
   }
  }
 }
+
+
+//LÄRDOM EFTER 2 dagars galenskap. DET ÄR INTE MÖJLIGT ATT STOPPA EN FOREACHLOOP om en condition inträder. Gick alltså inte att få if-satsen att funka för att splica en array. För att göra detta möjligt, alltså när dynamiskt skapade strängen matchar sträng i array så ska splice i arrayen köras. Till slut fick jag det att funka med en vanlig for-loop och efter att ha kört trim & tolowercase på strängarna. Måste ju finnas en enklare lösning??? 
